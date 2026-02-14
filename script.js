@@ -1,7 +1,7 @@
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
-const noBtn = document.getElementById(".no-btn");
-const yesBtn = document.getElementById(".btn[alt='Yes']");
+const noBtn = document.querySelector(".no-btn");
+const yesBtn = document.querySelector(".yes-btn");
 
 const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
@@ -18,8 +18,8 @@ envelope.addEventListener("click", () => {
 });
 
 noBtn.addEventListener("mouseover", () => {
-    const min = 200;
-    const max = 200;
+    const min = 100;
+    const max = 300;
 
     const distance = Math.random() * (max - min) + min;
     const angle = Math.random() * Math.PI * 2;
