@@ -19,13 +19,10 @@ envelope.addEventListener("click", () => {
 
 noBtn.addEventListener("mouseover", () => {
 
-    const parent = document.querySelector(".buttons");
-
-    const parentRect = parent.getBoundingClientRect();
     const btnRect = noBtn.getBoundingClientRect();
 
-    const maxX = parentRect.width - btnRect.width;
-    const maxY = parentRect.height - btnRect.height;
+    const maxX = window.innerWidth - btnRect.width;
+    const maxY = window.innerHeight - btnRect.height;
 
     const randomX = Math.random() * maxX;
     const randomY = Math.random() * maxY;
@@ -33,6 +30,7 @@ noBtn.addEventListener("mouseover", () => {
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
 });
+
 
 
 // let yesScale = 1;
