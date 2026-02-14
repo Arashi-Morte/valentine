@@ -120,8 +120,8 @@ p {
 
 .no-btn {
     z-index: 1;
-    position: absolute;
-    transition: left 0.2s ease, top 0.2s ease;
+    position: relative;
+    transition: transform 0.15s ease;
     cursor: default;
 }
 

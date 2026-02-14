@@ -17,42 +17,39 @@ envelope.addEventListener("click", () => {
     },50)
 });
 
-noBtn.addEventListener("mouseover", () => {
+// noBtn.addEventListener("mouseover", () => {
+//     const min = 100;
+//     const max = 300;
 
-    const parent = document.querySelector(".buttons");
+//     const distance = Math.random() * (max - min) + min;
+//     const angle = Math.random() * Math.PI * 2;
 
-    const parentRect = parent.getBoundingClientRect();
-    const btnRect = noBtn.getBoundingClientRect();
+//     const moveX = Math.cos(angle) * distance;
+//     const moveY = Math.sin(angle) * distance;
 
-    const maxX = parentRect.width - btnRect.width;
-    const maxY = parentRect.height - btnRect.height;
+//     noBtn.style.transition = "transform 0.3s ease";
+//     noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
 
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
-
-    noBtn.style.left = randomX + "px";
-    noBtn.style.top = randomY + "px";
-});
-
-
-// let yesScale = 1;
-// yesBtn.style.position = "relative";
-// yesBtn.style.transformOrigin = "center center";
-// yesBtn.style.transition = "transform 0.3s ease";
-
-// noBtn.addEventListener("click", () => {
-//     yesScale += 2;
-
-//     if (yesBtn.style.position !== "fixed") {
-//         yesBtn.style.position = "fixed";
-//         yesBtn.style.top = "50%";
-//         yesBtn.style.left = "50%";
-//         yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-
-//     } else {
-//         yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-//     }
 // });
+
+let yesScale = 1;
+yesBtn.style.position = "relative";
+yesBtn.style.transformOrigin = "center center";
+yesBtn.style.transition = "transform 0.3s ease";
+
+noBtn.addEventListener("click", () => {
+    yesScale += 2;
+
+    if (yesBtn.style.position !== "fixed") {
+        yesBtn.style.position = "fixed";
+        yesBtn.style.top = "50%";
+        yesBtn.style.left = "50%";
+        yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
+
+    } else {
+        yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
+    }
+});
 
 yesBtn.addEventListener("click", () => {
     title.textContent = "Yippeeeeee!";
