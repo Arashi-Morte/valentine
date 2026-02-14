@@ -18,19 +18,22 @@ envelope.addEventListener("click", () => {
 });
 
 noBtn.addEventListener("mouseover", () => {
-    const min = 100;
-    const max = 300;
 
-    const distance = Math.random() * (max - min) + min;
-    const angle = Math.random() * Math.PI * 2;
+    const parent = document.querySelector(".buttons");
 
-    const moveX = Math.cos(angle) * distance;
-    const moveY = Math.sin(angle) * distance;
+    const parentRect = parent.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
 
-    noBtn.style.transition = "transform 0.3s ease";
-    noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    const maxX = parentRect.width - btnRect.width;
+    const maxY = parentRect.height - btnRect.height;
 
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
 });
+
 
 // let yesScale = 1;
 // yesBtn.style.position = "relative";
